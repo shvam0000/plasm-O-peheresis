@@ -59,9 +59,9 @@ app.get('/faq', (req, res) => {
     res.render("faq");
 })
 
-app.get('/account', (req, res) => {
+/*app.get('/account', (req, res) => {
     res.render("account");
-})
+})*/
 
 app.get('/login', (req, res) => {
     res.render("login", { x: '' })
@@ -75,24 +75,19 @@ app.get('/about', (req, res) => {
     res.render("index");
 })
 
-/*app.get('/account', (req, res) => {
-    if (!user) {
+app.get('/account', (req, res) => {
+/*    if (!user) {
         res.redirect('/login')
         return console.log('Not logged in');
-    }
-    db.collection(user).find().toArray((err, result) => {
+    }*/
+    db.collection('items').find().toArray((err, result) => {
         if (err) return console.log(err)
         // console.log(result)
         res.render("account", {
-            name: user,
-            age: result,
-            blood: result,
-            contact: result,
-            address: result,
-            date: result,
+            items:result,
         })
     })
-})*/
+})
 
 app.post('/signup', (req, res) => {
     db.collection('signup').save(req.body, (err, result) => {
@@ -127,28 +122,15 @@ app.post('/logindata', (req, res) =>
         }
     });
 });
-
-/*app.post('/add', upload.any('itemfile'), (req, res) => {
-    var data = {}
-    if (!req.body.name) {
-        res.redirect('/account')
-        return console.log('Item not added')
-    } else
-        data['name'] = req.body.name
-        data['age'] = req.body.age
-        data['blood'] = req.body.blood
-        data['contact'] = req.body.contact
-        data['address'] = req.body.address
-        data['date'] = req.body.date
-    if (req.files.length != 0)
-        data['itemfile'] = req.files[0].originalname
-    console.log(data)
-    db.collection(user).insertMany(data, (err, result) => {
-        if (err) return console.log(err)
-        console.log('Item added successfully!')
-        res.redirect('/account')
+app.post('/add', (req, res) => {
+    db.collection('items').insertOne(req.body.item, (err, result) => {
+        if (err) { res.json(err) }
+        else {
+            console.log(result);
+            res.redirect('/account');
+        }
     })
-})*/
+})
 
 app.post('/logout', (req, res) => {
     user = null

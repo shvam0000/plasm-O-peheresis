@@ -55,107 +55,82 @@
       </form>
   </div>
 
+  <div class="container user-form">
+      <form action="/add" id="userForm" method="POST">
+          <label for="name" id="form-label">Name</label>
+            <input type="text" placeholder="Enter Name" id="form-input" name="item[name]" required>
+          <label for="age" id="form-label">Age</label>
+            <input type="number" placeholder="Enter Age" id="form-input" name="item[age]" required>
+          <label for="blood-group" id="form-label">Blood Group</label>
+            <input type="text" placeholder="Enter Blood Group" name="item[blood]" required>
+          <label for="conact-number" id="form-label">Contact Number</label>
+            <input type="number" name="item[contact]" placeholder="Enter Contact Number" id="form-input" required>
+          <label for="address" id="form-label">Address</label>
+            <input type="text" id="form-input" placeholder="Enter Address" name="item[address]" required>
+          <label for="date" id="form-label">Date of Recovery</label>
+            <input type="date" id="form-input" placeholder="Enter the date of Recovery" name="item[date]" required>
+          <br>
+          <button type="submit" class="btn btn-lg" style="margin-top: 0.5rem;">Submit</button></a>
+      </form>
+  </div>
 
-
-  <center>
-		<table border="4">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<td><input type="text" name="name" id="name"></td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>Age</th>
-					<td><input type="text" name="age" id="age"></td>
-				</tr>
-				<tr>
-					<th>Blood Group</th>
-					<td><input type="text" name="bg" id="bg"></td>
-				</tr>
-				<tr>
-					<th>Contact number</th>
-					<td><input type="text" name="contact-number" id="contact-number"></td>
-				</tr>
-				<tr>
-					<th>Address</th>
-					<td><input type="text" name="address" id="address"></td>
-				</tr>
-				<tr>
-					<th>Date of release</th>
-					<td><input type="text" name="dor" id="dor"></td>
-				</tr>
-				<tr id="btna">
-					<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
-				</tr>
-			</tbody>
-		</table>
-
-		<div class="donor-data-heading">
-		<h2>
+  <div class="donor-data-heading">
+      <h2>
           List of Plasma Donors
-		</h2>
-		</div>
-		<table border="4" id="show">
-			<thead>
-				<tr>
-					<th>First Name</th>
-					<th>Age</th>
-					<th>Blood Group</th>
-					<th>Contact Number</th>
-					<th>Address</th>
-					<th>Date of release</th>
-				</tr>
-			</thead>
-		</table>
-		</center>
+      </h2>
+  </div>
 
-      <script>
-
-		var list1 = [];
-		var list2 = [];
-		var list3 = [];
-		var list4 = [];
-		var list5 = [];
-		var list6 = [];
-
-		var n = 1;
-		var x = 0;
-
-		function AddRow() {
-
-			var AddRown = document.getElementById('show');
-			var NewRow = AddRown.insertRow(n);
-
-			list1[x] = document.getElementById("name").value;
-			list2[x] = document.getElementById("age").value;
-			list3[x] = document.getElementById("bg").value;
-			list4[x] = document.getElementById("contact-number").value;
-			list5[x] = document.getElementById("address").value;
-			list6[x] = document.getElementById("dor").value;
-
-			var cel1 = NewRow.insertCell(0);
-			var cel2 = NewRow.insertCell(1);
-			var cel3 = NewRow.insertCell(2);
-			var cel4 = NewRow.insertCell(3);
-			var cel5 = NewRow.insertCell(4);
-			var cel6 = NewRow.insertCell(5);
-
-			
-
-			cel1.innerHTML = list1[x];
-			cel2.innerHTML = list2[x];
-			cel3.innerHTML = list3[x];
-			cel4.innerHTML = list4[x];
-			cel5.innerHTML = list5[x];
-			cel6.innerHTML = list6[x];
-
-			n++;
-			x++;
-		}
-
-	</script>
+  <div class="donor-data">
+    <table class = "item imp">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Blood Group</th>
+          <th>Contact Number</th>
+          <th>Address</th>
+          <th>Date of Recovery</th>
+        </tr>
+        <% items.forEach(function(item){ %>
+        <tr>
+            <td>
+            <% if (item.name) { %>
+                <span><h1 style="color: greenyellow;"><b><%= item.name %></b></h1></span>
+            <% } %>
+            </td>
+            <td>
+            <% if (item.age) { %>
+                <span><h1 style="color: greenyellow;"><b><%= item.age %></b></h1></span>
+            <% } %>
+            </td>
+            <td>
+            <% if (item.blood) { %>
+                <span><h1 style="color: greenyellow;"><b><%= item.blood %></b></h1></span>
+            <% } %>
+            </td>
+            <td>
+            <% if (item.contact) { %>
+                <span><h1 style="color: greenyellow;"><b><%= item.contact %></b></h1></span>
+            <% } %>
+            </td>
+            <td>
+            <% if (item.address) { %>
+                <span><h1 style="color: greenyellow;"><b><%= item.address %></b></h1></span>
+            <% } %>
+            </td>
+            <td>
+            <% if (item.date) { %>
+                <span><h1 style="color: greenyellow;"><b><%= item.date %></b></h1></span>
+            <% } %>
+            </td>
+            <td>
+            <% if (item.itemfile) { %>
+                <span><img style="width: 200px;" src="./files/<%= item.itemfile %>"/></span>
+            <% } %>
+            </td>
+        </tr>
+         <% }) %>
+      </table>
+    
       </body>
       </html>
     
