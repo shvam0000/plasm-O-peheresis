@@ -84,7 +84,7 @@ We further also plan to add blood donors database to keep the list of an active 
 </p>
 <p align="center">
 <a href = "https://github.com/ELY00"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "">
+<a href = "www.linkedin.com/in/ankitdas2000">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
