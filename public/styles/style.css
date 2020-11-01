@@ -1,0 +1,184 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box;
+    line-height: 1.5em;
+}
+
+hr {
+    border: 0.5rem rgb(155, 153, 153) dotted;
+    border-bottom: none;
+    width: 8%;
+}
+
+.my-navbar {
+    background-color: white;
+    animation-name: onLoad;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes onLoad {
+    0% {
+        background-color: white;
+        left: 0px;
+        top: 0px;
+    }
+    50% {
+        background-color: rgba(248, 80, 50, 1);
+        left: 0px;
+        top: 0px;
+    }
+    100% {
+        background-color: white;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.my-navbar a,
+.my-navbar li {
+    color: black;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.my-navbar li {
+    margin: 0.5rem;
+}
+
+.my-navbar li:hover {
+    color: white;
+}
+
+.collapse a:hover {
+    color: white;
+}
+
+.my-navbar:hover {
+    background: rgba(248, 80, 50, 1);
+    background: -moz-linear-gradient(left, rgba(248, 80, 50, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 41, 12, 1) 65%, rgba(246, 41, 12, 1) 72%, rgba(240, 47, 23, 1) 88%, rgba(231, 56, 39, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(248, 80, 50, 1)), color-stop(0%, rgba(255, 255, 255, 1)), color-stop(0%, rgba(255, 255, 255, 1)), color-stop(65%, rgba(246, 41, 12, 1)), color-stop(72%, rgba(246, 41, 12, 1)), color-stop(88%, rgba(240, 47, 23, 1)), color-stop(100%, rgba(231, 56, 39, 1)));
+    background: -webkit-linear-gradient(left, rgba(248, 80, 50, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 41, 12, 1) 65%, rgba(246, 41, 12, 1) 72%, rgba(240, 47, 23, 1) 88%, rgba(231, 56, 39, 1) 100%);
+    background: -o-linear-gradient(left, rgba(248, 80, 50, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 41, 12, 1) 65%, rgba(246, 41, 12, 1) 72%, rgba(240, 47, 23, 1) 88%, rgba(231, 56, 39, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(248, 80, 50, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 41, 12, 1) 65%, rgba(246, 41, 12, 1) 72%, rgba(240, 47, 23, 1) 88%, rgba(231, 56, 39, 1) 100%);
+    background: linear-gradient(to right, rgba(248, 80, 50, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 41, 12, 1) 65%, rgba(246, 41, 12, 1) 72%, rgba(240, 47, 23, 1) 88%, rgba(231, 56, 39, 1) 100%);
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+.text-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.my-img-col img {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.my-col h1 {
+    padding-top: 10%;
+    padding-bottom: 3%;
+    margin-top: 2%;
+}
+
+.my-col p {
+    margin-top: 1%;
+    line-height: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.plasm-O-pheresis-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.img-col img {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.my-col h1 {
+    padding-top: 10%;
+    padding-bottom: 3%;
+    margin-top: 2%;
+}
+
+.my-col p {
+    margin-top: 1%;
+    line-height: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    justify-content: center;
+}
+
+#contact {
+    text-align: center;
+}
+
+.contact-form {
+    margin: 5% 30%;
+}
+
+.btn {
+    background-color: rgba(248, 80, 50, 1);
+    border: none;
+    color: black;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: rgba(248, 80, 50, 1);
+    color: white;
+    box-shadow: 5px 5px rgba(33, 33, 33, .2);
+}
+
+label {
+    clear: right;
+}
+
+#submit-message {
+    color: rgba(248, 80, 50, 1);
+    text-emphasis: strong;
+    padding: 0.5rem 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 3%;
+    background-color: rgba(248, 80, 50, 1);
+    padding-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:420px) {
+    .carousel .carousel-inner .img {
+        height: 42vh;
+    }
+}
